@@ -20,7 +20,7 @@ class Project(models.Model):
 class ProjectRole(models.Model):
     project = models.ForeignKey(Project, null=False, blank=False, related_name="project_roles")
     role = models.ForeignKey(Role, null=False, blank=False, related_name="role_projects")
-    quantity = models.IntegerField()
+    quantity = models.FloatField()
 
     def __str__(self):
         return "{} - {}".format(self.project.name, self.role.name)
